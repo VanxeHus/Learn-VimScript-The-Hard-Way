@@ -1,4 +1,4 @@
-# Learn-VimScript-The-Hard-Way
+# 学习vimscript的苦难之路(Learn-VimScript-The-Hard-Way)
 vim的学习曲线真是异常陡峭。
 在学习vim的过程中，发现一本书Learn Vimscript the Hard Way，链接如下：
 
