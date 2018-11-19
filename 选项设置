@@ -1,0 +1,74 @@
+选项设置
+Vim编辑器中，有很多的选项可以设置，通过设置这些选项，你可以改变Vim的一些行为。
+
+这些选项主要分为两种:一种是布尔选项(boolean options)(状态为"打开"或"关闭")，另一种是能够赋予不同值的选项。
+
+布尔选项(boolean options)
+尝试运行以下命令:
+
+:set number
+
+在窗口的左边，应该能够看到行数的显示。
+现在试试另外一个命令:
+
+:set nonumber
+
+刚刚出现的行数，现在应该消失了。因此，number是一个布尔选项:它能够被打开或关闭。你能够通过:set number来打开它，也能够通过:set nonumber来关闭它。
+
+所有的布尔选项都与此类似。通过:set <选项名字>来打开这个布尔选项，通过:set no<布尔选项>来关闭这个选项。
+
+切换布尔选项状态
+你也可以通过切换(toggling)命令，直接把布尔选项的状态切换到一个相反的状态。
+尝试以下命令:
+
+:set number!
+
+现在行数应该出现了。然后再重复输入同一个命令:
+
+:set number!
+
+行数应该又一次消失了。通过在一个布尔选项后面添加!(感叹号或者理解为"强调"),我们可以切换一个布尔选项的状态。
+
+查看选项状态
+你可以通过?字符来询问Vim，以此来获知一个选项现在的状态。运行下列命令，观察每个命令的作用。
+
+:set number
+:set number?
+:set nonumber
+:set number?
+
+我们可以看到第一次:set number?显示number，而第二次:set number?显示nonumber
+
+可赋值的选项
+有些选项相比布尔选项来说，是可以赋值的，尝试以下命令，观察命令的作用:
+
+:set number
+:set numberwidth=10
+:set numberwidth=4
+:set numberwidth?
+
+numberwidth选项决定行数的显示宽度。你可以通过:set <选项名字>=<值>命令来为一个非布尔选项赋值，然后用检查选项的命令:set <选项名字>?来查看这个选项现在的状态。
+
+现在试试查看其他几个常用的选项的状态:
+
+:set wrap?
+:set shiftround?
+:set matchtime?
+
+同时进行多个选项的设置
+最后，你可以在一个:set命令中同时进行多个选项的设置，这样输入更为简单、方便。试试以下命令:
+
+:set numberwidth=2
+:set nonumber
+:set numer numberwidth=6
+
+我们可以看到，最后一个命令中，对number和numberwidth这两个选项同时进行了设置。
+
+练习
+阅读文档:help 'number'(注意有单引号)
+阅读文档:help relativenumber
+阅读文档:help numberwidth
+阅读文档:help wrap
+阅读文档:help shiftround
+阅读文档:help matchtime
+为你的~/.vimrc文件添加添加一些Vimscript语句，设置一些你喜欢的选项。
