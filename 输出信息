@@ -1,0 +1,37 @@
+输出信息
+我们要学的第一个Vimscript语句是echo和echom。
+
+你可以通过:help echo和:help echom命令在Vim中阅读它们的详细文档。在你阅读这本书的过程中，你应该试着用:help命令阅读你遇到的每一个新命令的文档。
+
+通过下面的命令，在Vim中尝试一下使用echo命令：
+:echo "Hello, world!"
+
+运行过后，你应该能看到Hello, world!出现在窗口的下方。
+
+长久输出
+现在通过下面的命令尝试一下echom：
+:echom "Hello again, world!"
+
+你应该能够看见Hello again, world!出现在窗口下方。
+
+现在我们通过下面的命令，来看看:echo和:echom两者的区别:
+:messages
+
+你应该能看见一连串的消息。在这一连串的消息中,"Hello world!"没有记录在内，而"Hello again, world!"则被记录在内。
+
+当你学到这本书的后期，你需要开始编写许多很复杂的Vimscript语句，因此，在你需要输出这些结果来帮助你调试这个复杂的Vimscript程序时，简单的:echo语句可以输出这些结果，但是在脚本结束运行时，这些结果也就消失了，而:echom则会保存这些输出结果，让你可以用:messages命令查看。
+
+注释
+在进入下一章前，让我们来看看如何添加注释。当你在编写Vimscript脚本程序时(在~/.vimrc文件或其他任何文件中)，你可以用"字符来添加注释，比如:
+
+"让空格更有用
+nnoremap <space> za
+
+这两句语句有时候并不能正常工作(这就是Vimscript的其中一个奇怪的特性了),但是大多数情况下，这两句语句都没什么问题。之后我们会讨论一下它不能正常工作的情况(以及这样的原因)。
+
+练习
+阅读文档:help echo
+阅读文档:help echom
+阅读文档:help :messages
+在你的~/.vimrc文件中添加一行语句，让你在每次打开Vim时，都能在下方显示可爱的ASCII字符emoji(>^.^<)。
+
